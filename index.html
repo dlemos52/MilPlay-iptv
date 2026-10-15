@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milplay IPTV - O Melhor do Entretenimento na sua Tela</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6610f2;
+            --dark-bg: #0b0f19;
+            --card-bg: rgba(19, 27, 46, 0.85);
+            --accent-color: #00f2fe;
+        }
+
+        /* Plano de Fundo em Toda a Página */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(11, 15, 25, 0.55), rgba(11, 15, 25, 0.65)), url('iptv-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(11, 15, 25, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--accent-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 150px 0 80px 0;
+        }
+
+        .hero-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Estilização da Moldura de Televisão nas Laterais (Tamanho Otimizado) */
+        .tv-frame {
+            background: #111;
+            border: 6px solid #222;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 242, 254, 0.3);
+            overflow: hidden;
+            position: relative;
+            height: 220px;
+            margin-bottom: 15px;
+        }
+
+        .tv-screen {
+            width: 100%;
+            height: calc(100% - 24px);
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+            transform: scale(1.25);
+        }
+
+        .tv-stand {
+            height: 24px;
+            background: linear-gradient(to bottom, #222, #111);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tv-stand span {
+            background: #333;
+            padding: 1px 8px;
+            border-radius: 8px;
+            color: var(--accent-color);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Cards de Vantagens */
+        .custom-card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* Preços */
+        .price-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+
+        .badge-destaque {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent-color);
+            color: #000;
+            font-weight: 700;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+        }
+
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        footer {
+            background-color: rgba(7, 10, 18, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 0;
+            text-align: center;
+            color: #8c9ba5;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-tv me-2"></i>Milplay IPTV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#beneficios">Vantagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                    <li class="nav-item">
+                        <a href="https://wa.me/5521990288979?text=Ola!%20Gostaria%20de%20solicitar%20o%20meu%20teste%20gratis%20de%204%20horas%20de%20IPTV." class="btn btn-outline-info btn-sm px-3 rounded-pill" target="_blank">
+                            <i class="fa-brands fa-whatsapp me-1"></i> Teste Gratis
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section com 4 Televisões nas Laterais -->
+    <header class="hero-section">
+        <div class="container-fluid px-lg-4">
+            <div class="row align-items-center justify-content-center g-4">
+                
+                <!-- Coluna Esquerda: Duas TVs (Filmes em cima / Futebol embaixo) -->
+                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                    <!-- TV Esquerda Superior -->
+                    <div class="tv-frame">
+                        <div class="tv-screen">
+                            <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&controls=0&loop=1&playlist=TcMBFSGVi1c" title="Filmes e Séries"></iframe>
+                        </div>
+                        <div class="tv-stand"><span>MILPLAY VOD</span></div>
+                    </div>
+                    <!-- TV Esquerda Inferior (Futebol) -->
+                    <div class="tv-frame">
+                        <div class="tv-screen">
+                            <iframe src="https://www.youtube.com/embed/3auv8tNLv8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=3auv8tNLv8Q" title="Futebol ao Vivo"></iframe>
+                        </div>
+                        <div class="tv-stand"><span>PREMIERE & ESPORTES</span></div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Central Principal -->
+                <div class="col-xl-6 col-lg-6 text-center">
+                    <span class="badge bg-primary bg-opacity-75 text-white px-3 py-2 rounded-pill mb-3 fw-semibold shadow-sm">⚡ TECNOLOGIA ANTI-TRAVAMENTO</span>
+                    <h1 class="hero-title">Televisão Completa Sem Antena e Sem Fidelidade</h1>
+                    <p class="lead text-white mb-4 fw-medium" style="text-shadow: 0 1px 6px rgba(0,0,0,0.8);">Milhares de canais ao vivo, filmes atualizados (VOD) e séries completas em qualidade HD, FHD e 4K na sua Smart TV, celular, TV Box ou computador.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://wa.me/5521990288979?text=Ola!%20Quero%20pedir%20meu%20teste%20gratis%20de%204%20horas." class="btn btn-info btn-lg px-4 py-3 fw-bold rounded-pill text-dark shadow" target="_blank">
+                            <i class="fa-brands fa-whatsapp me-2"></i> QUERO TESTAR GRATIS (4H)
+                        </a>
+                        <a href="#planos" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">Ver Planos</a>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Duas TVs (Desenho em cima / Desenho embaixo) -->
+                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                    <!-- TV Direita Superior -->
+                    <div class="tv-frame">
+                        <div class="tv-screen">
+                            <iframe src="https://www.youtube.com/embed/NjEG6p1D_5w?autoplay=1&mute=1&controls=0&loop=1&playlist=NjEG6p1D_5w" title="Desenhos Classicos"></iframe>
+                        </div>
+                        <div class="tv-stand"><span>KIDS & CARTOON</span></div>
+                    </div>
+                    <!-- TV Direita Inferior (Novo Desenho) -->
+                    <div class="tv-frame">
+                        <div class="tv-screen">
+                            <iframe src="https://www.youtube.com/embed/sDW-xJQr1Ww?autoplay=1&mute=1&controls=0&loop=1&playlist=sDW-xJQr1Ww" title="Desenho Animado"></iframe>
+                        </div>
+                        <div class="tv-stand"><span>ANIMAÇÃO CLASSICA</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Por que escolher o nosso sistema?</h2>
+                <p class="text-muted">Oferecemos a melhor estabilidade e suporte do mercado.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card p-4 text-center">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h4 class="fw-bold mb-3">Sem Travamentos</h4>
+                        <p class="text-muted">Servidores de alta performance com tecnologia anti-buffer para você assistir sem interrupções.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card p-4 text-center">
+                        <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
+                        <h4 class="fw-bold mb-3">Filmes & Séries</h4>
+                        <p class="text-muted">Conteúdo atualizado diariamente com os principais lançamentos do cinema e das plataformas de streaming.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card p-4 text-center">
+                        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h4 class="fw-bold mb-3">Suporte via WhatsApp</h4>
+                        <p class="text-muted">Equipe pronta para ajudar na configuração rápida em seu aparelho de forma simples e guiada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secao de Planos -->
+    <section id="planos" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Nossos Planos de Acesso</h2>
+                <p class="text-muted">Escolha a melhor opção para sua casa. Sem taxas de adesão.</p>
+            </div>
+            <div class="row justify-content-center g-4">
+                <!-- Plano Mensal -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="price-card featured text-center">
+                        <div class="badge-destaque">POPULAR</div>
+                        <h3 class="fw-bold mb-3">Plano Mensal</h3>
+                        <div class="display-5 fw-bold text-info mb-4">R$ 30<span class="fs-6 text-muted">/mês</span></div>
+                        <ul class="list-unstyled text-start mb-4 text-muted">
+                            <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i> +100.000 Conteúdos (Canais, Filmes e Séries)</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i> Qualidade SD, HD, FHD e 4K</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i> Guia de Programação (EPG)</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-info me-2"></i> Até 2 Telas Simultâneas</li>
+                        </ul>
+                        <a href="https://wa.me/5521990288979?text=Ola!%20Gostaria%20de%20assinar%20o%20Plano%20Mensal." class="btn btn-info w-100 py-3 fw-bold rounded-pill text-dark" target="_blank">CONTRATAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botao WhatsApp Flutuante -->
+    <a href="https://wa.me/5521990288979?text=Ola!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informacoes." class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp
+    </a>
+
+    <!-- Rodape -->
+    <footer>
+        <div class="container">
+            <p class="mb-1">Direitos Reservados Demilson Lemos <span id="current-datetime"></span></p>
+            <p class="small text-muted mb-0">Suporte Tecnico e Vendas: (21) 99028-8979</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript para Atualizar a Data e Hora em Tempo Real -->
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+            document.getElementById('current-datetime').textContent = formattedDateTime;
+        }
+
+        // Atualiza imediatamente e depois a cada segundo
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
