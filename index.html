@@ -43,12 +43,12 @@
 
         /* Hero Section */
         .hero-section {
-            padding: 120px 0 60px 0;
+            padding: 110px 0 50px 0;
         }
 
         .hero-title {
             font-weight: 900;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: #ffffff;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
@@ -63,33 +63,42 @@
             }
         }
 
-        /* Estilo Tela de Cinema Desktop (Sem corte de legendas na parte inferior) */
+        /* Moldura de TV 4K Adaptável (Desktop e Celular) */
         .tv-4k-wrapper {
-            width: 98%;
+            width: 95vw;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .tv-4k-frame {
             background: #0d0f12;
-            border: 8px solid #23272e;
-            border-radius: 18px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 242, 254, 0.3);
+            border: 5px solid #23272e;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 242, 254, 0.35);
             overflow: hidden;
             position: relative;
-            height: 340px;
+            /* Altura ampla e proporcional para celular */
+            height: 230px;
+        }
+
+        @media (min-width: 576px) {
+            .tv-4k-frame {
+                height: 320px;
+                border-width: 6px;
+            }
         }
 
         @media (min-width: 768px) {
             .tv-4k-frame {
-                height: 520px;
-                border-width: 10px;
+                height: 500px;
+                border-width: 8px;
+                border-radius: 18px;
             }
         }
 
         @media (min-width: 992px) {
             .tv-4k-frame {
-                height: 720px; /* Altura de Tela de Cinema perfeita para leitura completa de legendas */
+                height: 700px;
                 border-width: 12px;
                 border-radius: 22px;
             }
@@ -97,7 +106,7 @@
 
         .tv-screen {
             width: 100%;
-            height: calc(100% - 24px);
+            height: calc(100% - 22px);
             background: #000;
             position: relative;
             overflow: hidden;
@@ -108,59 +117,12 @@
             height: 100%;
             border: none;
             pointer-events: none;
-            transform: scale(1.05); /* Enquadramento perfeito das legendas */
+            transform: scale(1.05);
         }
 
-        /* Molduras de TV em Grade (Mobile - 2 Colunas) */
-        .tv-mini-frame {
-            background: #111;
-            border: 4px solid #222;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 242, 254, 0.3);
-            overflow: hidden;
-            position: relative;
-            height: 125px;
-            margin-bottom: 12px;
-        }
-
-        @media (min-width: 576px) {
-            .tv-mini-frame {
-                height: 155px;
-            }
-        }
-
-        .tv-mini-frame .tv-screen iframe {
-            transform: scale(1.25);
-        }
-
-        .tv-stand {
-            height: 20px;
-            background: linear-gradient(to bottom, #222, #111);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .tv-stand span {
-            background: #333;
-            padding: 1px 8px;
-            border-radius: 6px;
-            color: var(--accent-color);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 95%;
-        }
-
-        /* Base da TV Principal Desktop */
+        /* Base e Suporte da TV */
         .tv-base-stand {
-            height: 24px;
+            height: 22px;
             background: linear-gradient(to bottom, #23272e, #0e1013);
             display: flex;
             align-items: center;
@@ -170,25 +132,39 @@
 
         .tv-brand-badge {
             background: #000;
-            padding: 2px 16px;
+            padding: 2px 14px;
             border-radius: 10px;
             color: var(--accent-color);
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 2px;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(0, 242, 254, 0.4);
         }
 
-        .tv-pedestal {
-            width: 200px;
-            height: 14px;
-            background: linear-gradient(to bottom, #3a404a, #1a1c22);
-            margin: 0 auto;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        @media (min-width: 768px) {
+            .tv-brand-badge {
+                font-size: 0.75rem;
+                padding: 2px 18px;
+            }
         }
 
-        /* Transição Suave do Carrossel Desktop */
+        .tv-pedestal {
+            width: 140px;
+            height: 10px;
+            background: linear-gradient(to bottom, #3a404a, #1a1c22);
+            margin: 0 auto;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        @media (min-width: 768px) {
+            .tv-pedestal {
+                width: 200px;
+                height: 14px;
+            }
+        }
+
+        /* Transição Suave do Carrossel */
         .carousel-fade .carousel-item {
             opacity: 0;
             transition: opacity 1.2s ease-in-out;
@@ -327,7 +303,7 @@
 
     <!-- Hero Section -->
     <header class="hero-section">
-        <div class="container-fluid px-3 px-lg-5">
+        <div class="container-fluid px-2 px-lg-5">
             
             <!-- Apresentação Principal -->
             <div class="row justify-content-center text-center mb-4">
@@ -344,27 +320,53 @@
                 </div>
             </div>
 
-            <!-- LAYOUT DESKTOP: Tela de Cinema Ultra-Wide (Sem cortes de legendas) -->
-            <div class="d-none d-lg-block text-center mt-4">
+            <!-- TV 4K ULTRA-WIDE ÚNICA (Responsiva para Celular e Desktop) -->
+            <div class="text-center mt-3 mt-lg-4">
                 <div class="tv-4k-wrapper">
                     <div class="tv-4k-frame">
-                        <div id="tvCarouselDesktop" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="7000">
+                        <div id="tvCarousel" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="6500">
                             <div class="carousel-inner h-100">
+                                
+                                <!-- Slide 1: Telecine / Filmes VOD -->
                                 <div class="carousel-item active h-100">
-                                    <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&controls=0&loop=1&playlist=TcMBFSGVi1c" title="Filmes e Séries"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&controls=0&loop=1&playlist=TcMBFSGVi1c" loading="lazy" title="Filmes e Séries"></iframe>
                                 </div>
+
+                                <!-- Slide 2: Premiere / Futebol ao Vivo -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/3auv8tNLv8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=3auv8tNLv8Q" title="Futebol ao Vivo"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/3auv8tNLv8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=3auv8tNLv8Q" loading="lazy" title="Futebol ao Vivo"></iframe>
                                 </div>
+
+                                <!-- Slide 3: SporTV -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/prd7ksglMPY?autoplay=1&mute=1&controls=0&loop=1&playlist=prd7ksglMPY" title="SporTV Esportes"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/prd7ksglMPY?autoplay=1&mute=1&controls=0&loop=1&playlist=prd7ksglMPY" loading="lazy" title="SporTV Esportes"></iframe>
                                 </div>
+
+                                <!-- Slide 4: HBO / Cinema 4K -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/NjEG6p1D_5w?autoplay=1&mute=1&controls=0&loop=1&playlist=NjEG6p1D_5w" title="Desenhos Classicos"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/z8jBD3SLErs?autoplay=1&mute=1&controls=0&loop=1&playlist=z8jBD3SLErs" loading="lazy" title="HBO Cinema 4K"></iframe>
                                 </div>
+
+                                <!-- Slide 5: Cartoon Network -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/sDW-xJQr1Ww?autoplay=1&mute=1&controls=0&loop=1&playlist=sDW-xJQr1Ww" title="Desenho Animado"></iframe>
+                                    <iframe src="https://www.youtube.com/embed/NjEG6p1D_5w?autoplay=1&mute=1&controls=0&loop=1&playlist=NjEG6p1D_5w" loading="lazy" title="Cartoon Network"></iframe>
                                 </div>
+
+                                <!-- Slide 6: Disney Channel / Tooncast -->
+                                <div class="carousel-item h-100">
+                                    <iframe src="https://www.youtube.com/embed/sDW-xJQr1Ww?autoplay=1&mute=1&controls=0&loop=1&playlist=sDW-xJQr1Ww" loading="lazy" title="Disney Channel"></iframe>
+                                </div>
+
+                                <!-- Slide 7: Looney Tunes -->
+                                <div class="carousel-item h-100">
+                                    <iframe src="https://www.youtube.com/embed/SPt9vWekqm0?autoplay=1&mute=1&controls=0&loop=1&playlist=SPt9vWekqm0" loading="lazy" title="Looney Tunes"></iframe>
+                                </div>
+
+                                <!-- Slide 8: Fox Sports -->
+                                <div class="carousel-item h-100">
+                                    <iframe src="https://www.youtube.com/embed/b-BmQvwctuE?autoplay=1&mute=1&controls=0&loop=1&playlist=b-BmQvwctuE" loading="lazy" title="Fox Sports"></iframe>
+                                </div>
+
                             </div>
                         </div>
                         <div class="tv-base-stand">
@@ -372,69 +374,6 @@
                         </div>
                     </div>
                     <div class="tv-pedestal"></div>
-                </div>
-            </div>
-
-            <!-- LAYOUT MOBILE: Telas Divididas em Colunas -->
-            <div class="d-lg-none mt-3">
-                <div class="row g-2">
-                    
-                    <!-- COLUNA ESQUERDA -->
-                    <div class="col-6">
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&controls=0&loop=1&playlist=TcMBFSGVi1c" title="VOD"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>MILPLAY VOD</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/3auv8tNLv8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=3auv8tNLv8Q" title="Futebol"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>PREMIERE & ESPORTES</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/z8jBD3SLErs?autoplay=1&mute=1&controls=0&loop=1&playlist=z8jBD3SLErs" title="Cinema 4K"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>CINEMA 4K</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/prd7ksglMPY?autoplay=1&mute=1&controls=0&loop=1&playlist=prd7ksglMPY" title="SporTV"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>SPORTV</span></div>
-                        </div>
-                    </div>
-
-                    <!-- COLUNA DIREITA -->
-                    <div class="col-6">
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/NjEG6p1D_5w?autoplay=1&mute=1&controls=0&loop=1&playlist=NjEG6p1D_5w" title="Cartoon Network"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>CARTOON NETWORK</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/sDW-xJQr1Ww?autoplay=1&mute=1&controls=0&loop=1&playlist=sDW-xJQr1Ww" title="Tooncast"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>TOONCAST</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/SPt9vWekqm0?autoplay=1&mute=1&controls=0&loop=1&playlist=SPt9vWekqm0" title="Looney Tunes"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>LOONEY TUNES</span></div>
-                        </div>
-                        <div class="tv-mini-frame">
-                            <div class="tv-screen">
-                                <iframe src="https://www.youtube.com/embed/b-BmQvwctuE?autoplay=1&mute=1&controls=0&loop=1&playlist=b-BmQvwctuE" title="Disney Channel"></iframe>
-                            </div>
-                            <div class="tv-stand"><span>DISNEY CHANNEL</span></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
