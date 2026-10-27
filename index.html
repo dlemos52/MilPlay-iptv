@@ -77,7 +77,6 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 242, 254, 0.35);
             overflow: hidden;
             position: relative;
-            /* Altura ampla e proporcional para celular */
             height: 230px;
         }
 
@@ -112,12 +111,11 @@
             overflow: hidden;
         }
 
-        .tv-screen iframe {
+        .tv-screen img {
             width: 100%;
             height: 100%;
-            border: none;
-            pointer-events: none;
-            transform: scale(1.05);
+            object-fit: cover;
+            object-position: center;
         }
 
         /* Base e Suporte da TV */
@@ -320,51 +318,46 @@
                 </div>
             </div>
 
-            <!-- TV 4K ULTRA-WIDE ÚNICA (Responsiva para Celular e Desktop) -->
+            <!-- TV 4K com as novas imagens em Loop Contínuo -->
             <div class="text-center mt-3 mt-lg-4">
                 <div class="tv-4k-wrapper">
                     <div class="tv-4k-frame">
-                        <div id="tvCarousel" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="6500">
+                        <div id="tvCarousel" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="3500">
                             <div class="carousel-inner h-100">
                                 
-                                <!-- Slide 1: Telecine / Filmes VOD -->
+                                <!-- Slide 1: Warner Bros -->
                                 <div class="carousel-item active h-100">
-                                    <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&controls=0&loop=1&playlist=TcMBFSGVi1c" loading="lazy" title="Filmes e Séries"></iframe>
+                                    <img src="gift_wb.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 2: Premiere / Futebol ao Vivo -->
+                                <!-- Slide 2: Telecine -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/3auv8tNLv8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=3auv8tNLv8Q" loading="lazy" title="Futebol ao Vivo"></iframe>
+                                    <img src="gift_telecine.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 3: SporTV -->
+                                <!-- Slide 3: HBO -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/prd7ksglMPY?autoplay=1&mute=1&controls=0&loop=1&playlist=prd7ksglMPY" loading="lazy" title="SporTV Esportes"></iframe>
+                                    <img src="gift_hbo.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 4: HBO / Cinema 4K -->
+                                <!-- Slide 4: Marvel Studios -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/z8jBD3SLErs?autoplay=1&mute=1&controls=0&loop=1&playlist=z8jBD3SLErs" loading="lazy" title="HBO Cinema 4K"></iframe>
+                                    <img src="gift_marvel.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 5: Cartoon Network -->
+                                <!-- Slide 5: Homem de Ferro -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/NjEG6p1D_5w?autoplay=1&mute=1&controls=0&loop=1&playlist=NjEG6p1D_5w" loading="lazy" title="Cartoon Network"></iframe>
+                                    <img src="gift_ferro.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 6: Disney Channel / Tooncast -->
+                                <!-- Slide 6: Cartoon Network -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/sDW-xJQr1Ww?autoplay=1&mute=1&controls=0&loop=1&playlist=sDW-xJQr1Ww" loading="lazy" title="Disney Channel"></iframe>
+                                    <img src="gif_cartoon.gif" alt="" loading="lazy">
                                 </div>
 
-                                <!-- Slide 7: Looney Tunes -->
+                                <!-- Slide 7: Syfy -->
                                 <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/SPt9vWekqm0?autoplay=1&mute=1&controls=0&loop=1&playlist=SPt9vWekqm0" loading="lazy" title="Looney Tunes"></iframe>
-                                </div>
-
-                                <!-- Slide 8: Fox Sports -->
-                                <div class="carousel-item h-100">
-                                    <iframe src="https://www.youtube.com/embed/b-BmQvwctuE?autoplay=1&mute=1&controls=0&loop=1&playlist=b-BmQvwctuE" loading="lazy" title="Fox Sports"></iframe>
+                                    <img src="gif_syfy.gif" alt="" loading="lazy">
                                 </div>
 
                             </div>
@@ -472,7 +465,6 @@
             document.getElementById('current-datetime').textContent = formattedDateTime;
         }
 
-        // Atualiza imediatamente e depois a cada segundo
         updateDateTime();
         setInterval(updateDateTime, 1000);
     </script>
