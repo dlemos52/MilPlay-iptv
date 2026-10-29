@@ -63,7 +63,7 @@
             }
         }
 
-        /* Moldura de TV 4K Adaptável (Desktop e Celular) */
+        /* Moldura de TV 4K Adaptável */
         .tv-4k-wrapper {
             width: 95vw;
             max-width: 1200px;
@@ -172,7 +172,7 @@
             opacity: 1;
         }
 
-        /* Cards de Vantagens com Texto Claro */
+        /* Cards de Vantagens */
         .custom-card {
             background-color: var(--card-bg);
             backdrop-filter: blur(8px);
@@ -200,7 +200,7 @@
             margin-bottom: 20px;
         }
 
-        /* Preços e Listas com Textos Claros */
+        /* Preços e Listas */
         .price-card {
             background: var(--card-bg);
             backdrop-filter: blur(8px);
@@ -303,7 +303,6 @@
     <header class="hero-section">
         <div class="container-fluid px-2 px-lg-5">
             
-            <!-- Apresentação Principal -->
             <div class="row justify-content-center text-center mb-4">
                 <div class="col-12 col-lg-8">
                     <span class="badge bg-primary bg-opacity-75 text-white px-3 py-2 rounded-pill mb-3 fw-semibold shadow-sm">⚡ TECNOLOGIA ANTI-TRAVAMENTO</span>
@@ -318,138 +317,91 @@
                 </div>
             </div>
 
-            <!-- TV 4K com as imagens e GIFs atualizados em Loop Contínuo -->
+            <!-- TV 4K com as imagens e GIFs diretamente da Raiz -->
             <div class="text-center mt-3 mt-lg-4">
                 <div class="tv-4k-wrapper">
                     <div class="tv-4k-frame">
-                        <div id="tvCarousel" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="3500">
+                        <div id="tvCarousel" class="carousel slide carousel-fade tv-screen" data-bs-ride="carousel" data-bs-interval="2500">
                             <div class="carousel-inner h-100">
                                 
-                                <!-- Slide 1: Cartoon Network -->
+                                <div class="carousel-item h-100">
+                                    <img src="./gif_telecine2.gif" alt="Telecine 2">
+                                </div>
+
                                 <div class="carousel-item active h-100">
-                                    <img src="gif_cartoon.gif" alt="Cartoon Network" loading="lazy">
+                                    <img src="./gif_disney.gif" alt="Disney+">
                                 </div>
 
-                                <!-- Slide 2: Disney+ -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_disney.gif" alt="Disney+" loading="lazy">
+                                    <img src="./gif_batman.gif" alt="Batman">
                                 </div>
 
-                                <!-- Slide 3: ESPN -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_espn.gif" alt="ESPN" loading="lazy">
+                                    <img src="./gif_cartoon2.gif" alt="Cartoon Network Mix">
                                 </div>
 
-                                <!-- Slide 4: Homem de Ferro -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_ferro.gif" alt="Homem de Ferro" loading="lazy">
+                                    <img src="./gif_cartoon21.gif" alt="Cartoon Network 21">
+                                </div>
+                                <div class="carousel-item h-100">
+                                    <img src="./gif_telecine2.gif" alt="Telecine 2">
                                 </div>
 
-                                <!-- Slide 5: Filme / King Kong -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_filme.gif" alt="Filme" loading="lazy">
+                                    <img src="./gif_cartoon22.gif" alt="Cartoon Network 22">
                                 </div>
 
-                                <!-- Slide 6: Futebol -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_futebol.gif" alt="Futebol" loading="lazy">
+                                    <img src="./gif_espn.gif" alt="ESPN">
                                 </div>
 
-                                <!-- Slide 7: HBO -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_hbo.gif" alt="HBO" loading="lazy">
+                                    <img src="./gif_telecine.gif" alt="Telecine">
                                 </div>
 
-                                <!-- Slide 8: Marvel Studios -->
+                                
                                 <div class="carousel-item h-100">
-                                    <img src="gif_marvel.gif" alt="Marvel Studios" loading="lazy">
+                                    <img src="./gif_filme.gif" alt="Filme King Kong">
+                                </div>
+                                <div class="carousel-item h-100">
+                                    <img src="./gif_homemdeferro.gif" alt="Filme Homem de Ferro">
                                 </div>
 
-                                <!-- Slide 9: Vingadores / Avengers -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_marvel2.gif" alt="Avengers" loading="lazy">
+                                    <img src="./gif_futebol.gif" alt="Futebol">
+                                </div>
+                                <div class="carousel-item h-100">
+                                    <img src="./gif_tnt.gif" alt="TNT">
                                 </div>
 
-                                <!-- Slide 10: Prime Video -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_prime.gif" alt="Prime Video" loading="lazy">
+                                    <img src="./gif_marvel2.gif" alt="Marvel">
                                 </div>
 
-                                <!-- Slide 11: Telecine -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_telecine.gif" alt="Telecine" loading="lazy">
+                                    <img src="./gif_hbo.gif" alt="HBO">
                                 </div>
 
-                                <!-- Slide 12: SYFY -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_syfy.gif" alt="SYFY" loading="lazy">
+                                    <img src="./gif_syfy.gif" alt="SYFY">
                                 </div>
 
-                                <!-- Slide 13: Telecine 2 -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_telecine2.gif" alt="Telecine 2" loading="lazy">
+                                    <img src="./gif_sportv.gif" alt="SportV">
                                 </div>
 
-                                <!-- Slide 14: Cinema -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_cinema.gif" alt="Cinema" loading="lazy">
+                                    <img src="./gif_prime.gif" alt="Prime Video">
                                 </div>
 
-                                <!-- Slide 15: WB -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_wb.gif" alt="WB" loading="lazy">
+                                    <img src="./gif_wb.gif" alt="WB">
                                 </div>
 
-                                <!-- Slide 15: Sportv -->
                                 <div class="carousel-item h-100">
-                                    <img src="gif_sportv.gif" alt="Sportv" loading="lazy">
+                                    <img src="./gif_telecine2.gif" alt="Telecine 2">
                                 </div>
-
-                                <!-- Slide 16: Cartoon2 -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_cartoon2.gif" alt="Cartoon2" loading="lazy">
-                                </div>
-                                <!-- Slide 17: Filme Homem de Ferro -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_homemdeferro.gif" alt="Filme Homem de Ferro" loading="lazy">
-                                </div>
-                                <!-- Slide 18: Filme Batman -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_batman.gif" alt="Filme Batman" loading="lazy">
-                                </div>
-                                <!-- Slide 19: Filme ET -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_et.gif" alt="Filme ET" loading="lazy">
-                                </div>
-                                <!-- Slide 20: Filme Final -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_final.gif" alt="Filme Final" loading="lazy">
-                                </div>
-                                <!-- Slide 21: Cartoon 21 -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_cartoon21.gif" alt="Cartoon 21" loading="lazy">
-                                </div>
-                                <!-- Slide 22: Cartoon 22 -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_cartoon22.gif" alt="Cartoon 22" loading="lazy">
-                                </div>
-                                <!-- Slide 23: sPORTV -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_sportv.gif" alt="sPORTV" loading="lazy">
-                                </div>
-                                <!-- Slide 24: Panda -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_panda.gif" alt="Panda" loading="lazy">
-                                </div>
-                                <!-- Slide 25: Piratas -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_piratas.gif" alt="Piratas" loading="lazy">
-                                </div>
-                                <!-- Slide 26: Kong -->
-                                <div class="carousel-item h-100">
-                                    <img src="gif_kong.gif" alt="Kong" loading="lazy">
-                                </div>
-
+                                
 
                             </div>
                         </div>
@@ -464,7 +416,7 @@
         </div>
     </header>
 
-    <!-- Beneficios -->
+    <!-- Benefícios -->
     <section id="beneficios" class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
@@ -497,7 +449,7 @@
         </div>
     </section>
 
-    <!-- Secao de Planos -->
+    <!-- Seção de Planos -->
     <section id="planos" class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
@@ -505,7 +457,6 @@
                 <p class="section-subtitle">Escolha a melhor opção para sua casa. Sem taxas de adesão.</p>
             </div>
             <div class="row justify-content-center g-4">
-                <!-- Plano Mensal -->
                 <div class="col-lg-4 col-md-6">
                     <div class="price-card featured text-center">
                         <div class="badge-destaque">POPULAR</div>
@@ -524,12 +475,12 @@
         </div>
     </section>
 
-    <!-- Botao WhatsApp Flutuante -->
+    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5521990288979?text=Ola!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informacoes." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp
     </a>
 
-    <!-- Rodape -->
+    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p class="mb-1">Direitos Reservados Demilson Lemos <span id="current-datetime"></span></p>
